@@ -12,6 +12,7 @@ var usePushState = (typeof history.pushState !== 'undefined');
     Get current scroller element
 */
 function getScroller() {
+  return $('html,body');
     if (platform.isSmallScreen()) {
         return $('.book-body');
     } else {
