@@ -30,6 +30,7 @@ function scrollToHash(hash) {
     if (hash) {
         dest = getElementTopPosition(hash);
         if (dest > 130) dest -= 130;
+      console.log("Theme offset:", dest);
     }
 
     // Unbind scroll detection
