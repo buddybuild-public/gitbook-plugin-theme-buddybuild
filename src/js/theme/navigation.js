@@ -20,7 +20,8 @@ function getScroller() {
 */
 function scrollToHash(hash) {
     var $scroller = getScroller(),
-        dest = 0;
+        dest = 0,
+        vOffset = 70;
 
     // Don't try to scroll if element doesn't exist
     if (!pageHasElement(hash)) {
@@ -29,8 +30,7 @@ function scrollToHash(hash) {
 
     if (hash) {
         dest = getElementTopPosition(hash);
-        if (dest > 130) dest -= 130;
-      console.log("Theme offset:", dest);
+        if (dest > vOffset) dest -= vOffset;
     }
 
     // Unbind scroll detection
