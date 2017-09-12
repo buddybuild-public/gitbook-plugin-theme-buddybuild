@@ -29,7 +29,7 @@ function scrollToHash(hash) {
 
     if (hash) {
         dest = getElementTopPosition(hash);
-        if (dest > 100) dest -= 100;
+        if (dest > 130) dest -= 130;
     }
 
     // Unbind scroll detection
