@@ -13,11 +13,6 @@ var usePushState = (typeof history.pushState !== 'undefined');
 */
 function getScroller() {
   return $('html,body');
-    if (platform.isSmallScreen()) {
-        return $('.book-body');
-    } else {
-        return $('.body-inner');
-    }
 }
 
 /*
@@ -34,6 +29,7 @@ function scrollToHash(hash) {
 
     if (hash) {
         dest = getElementTopPosition(hash);
+        if (dest > 100) dest -= 100;
     }
 
     // Unbind scroll detection
