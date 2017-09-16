@@ -10,6 +10,10 @@ var usePushState = (typeof history.pushState !== 'undefined');
 
 /*
     Get current scroller element
+    This differs notably from GitBook's default theme, where they pick
+    a subordinate page element to scroll. buddybuild's presentation has
+    several fixed elements and so scrolling the overall document is the
+    best choice.
 */
 function getScroller() {
   return $('html,body');
