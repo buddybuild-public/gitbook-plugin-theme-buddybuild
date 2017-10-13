@@ -12,6 +12,7 @@ var state = {};
 */
 function hasChanged(ctx) {
     console.log('page has changed', ctx); // eslint-disable-line no-console
+    console.log("Started?", started);
     setState(ctx);
 
     if (!started) {
