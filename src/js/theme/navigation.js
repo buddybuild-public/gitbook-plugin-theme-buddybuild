@@ -79,39 +79,11 @@ function any(arr, predicate) {
     Return the top position of an element
  */
 function getElementTopPosition(id) {
-    // Get actual position of element if nested
-    var $scroller  = getScroller(),
-        $container = $scroller.find('.page-inner'),
-        $el        = $scroller.find(id),
-        $parent    = $el.offsetParent(),
-        dest       = 0;
-
-    // Exit early if we can't find any of those elements
-    if (any([$scroller, $container, $el, $parent], isEmpty)) {
-        return 0;
-    }
-
-    dest = $el.position().top;
-
-    // Note: this could be a while loop, but to avoid any chances of infinite loops
-    // we'll limit the max iterations to 10
-    var MAX_ITERATIONS = 10;
-    for (var i = 0; i < MAX_ITERATIONS; i++) {
-        // Stop when we find the element's ancestor just below $container
-        // or if we hit the top of the dom (parent's parent is itself)
-        if ($parent.is($container) || $parent.is($parent.offsetParent())) {
-            break;
-        }
-
-        // Go up the DOM tree, to the next parent
-        $el = $parent;
-        dest += $el.position().top;
-        $parent = $el.offsetParent();
-    }
-
-    // Return rounded value since
-    // jQuery scrollTop() returns an integer
-    return Math.floor(dest);
+    var currentST = $(window).scrollTop();
+    $(window).scrollTop(0);
+    var target    = $(id).offset().top;
+    $(window).scrollTop(currentST);
+    return Math.floor(target);
 }
 
 
