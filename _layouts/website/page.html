@@ -112,9 +112,6 @@ try {
 
 {% block javascript %}
     <script>
-      window.BBLoaded = {};
-    </script>
-    <script>
       var gitbook = gitbook || [];
       gitbook.push(function() {
         gitbook.page.hasChanged({{ template.getJSContext()|dump|safe }});
