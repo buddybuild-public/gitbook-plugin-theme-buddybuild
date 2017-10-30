@@ -190,10 +190,11 @@ function handleScrolling() {
 }
 
 /*
-    Handle a change of url withotu refresh the whole page
+    Handle a change of URL without refreshing the whole page
 */
 var prevUri = location.href;
 function handleNavigation(relativeUrl, push) {
+    console.log("Start of handleNavigation");
     var prevUriParsed = url.parse(prevUri);
 
     var uri = url.resolve(window.location.pathname, relativeUrl);
@@ -220,6 +221,7 @@ function handleNavigation(relativeUrl, push) {
 
     prevUri = uri;
 
+    console.log("About to call Deferred");
     var promise = $.Deferred(function(deferred) {
         $.ajax({
             type: 'GET',
@@ -308,6 +310,7 @@ function handleNavigation(relativeUrl, push) {
             // location.href = relativeUrl;
         })
     );
+    console.log("End of handleNavigation");
 }
 
 function updateNavigationPosition() {

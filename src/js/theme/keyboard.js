@@ -16,16 +16,19 @@ function bindShortcut(keys, fn) {
 function init() {
     // Next
     bindShortcut(['right'], function(e) {
+      console.log("right arrow pressed");
         navigation.goNext();
     });
 
     // Prev
     bindShortcut(['left'], function(e) {
+      console.log("left arrow pressed");
         navigation.goPrev();
     });
 
     // Toggle Summary
     bindShortcut(['s'], function(e) {
+      console.log("s pressed");
         sidebar.toggle();
     });
 }
