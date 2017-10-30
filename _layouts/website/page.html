@@ -122,7 +122,6 @@ try {
     </script>
     <script src="{{ "gitbook.js"|resolveAsset }}"></script>
     <script src="{{ "theme.js"|resolveAsset }}"></script>
-    <script src="{{ "../_js/highlight/highlight.pack.js"|resolveAsset }}" async></script>
 {% for resource in plugins.resources.js -%}
 {% if resource.url %}
     <script src="{{ resource.url }}"></script>
@@ -131,6 +130,7 @@ try {
 {%- endif %}
 {%- endfor %}
     <script src="{{ "../_js/docs.js"|resolveAsset }}"></script>
+    <script src="{{ "../_js/highlight/highlight.pack.js"|resolveAsset }}" async></script>
 
     <script>window.intercomSettings = { app_id: "jhcdgof4" };</script>
     <script>(function(){var w=window;var ic=w.Intercom;if(typeof
