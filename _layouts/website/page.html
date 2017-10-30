@@ -111,12 +111,6 @@ try {
 {% endblock %}
 
 {% block javascript %}
-    <script>
-      var gitbook = gitbook || [];
-      gitbook.push(function() {
-        gitbook.page.hasChanged({{ template.getJSContext()|dump|safe }});
-      });
-    </script>
     <script src="{{ "gitbook.js"|resolveAsset }}"></script>
     <script src="{{ "theme.js"|resolveAsset }}"></script>
 {% for resource in plugins.resources.js -%}
@@ -211,5 +205,11 @@ ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{va
 {% endblock %}
 </div>
 
+    <script>
+      var gitbook = gitbook || [];
+      gitbook.push(function() {
+        gitbook.page.hasChanged({{ template.getJSContext()|dump|safe }});
+      });
+    </script>
 </div>
 {% endblock %}
