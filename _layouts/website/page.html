@@ -114,6 +114,12 @@ try {
     <script>
       window.BBLoaded = {};
     </script>
+    <script>
+      var gitbook = gitbook || [];
+      gitbook.push(function() {
+        gitbook.page.hasChanged({{ template.getJSContext()|dump|safe }});
+      });
+    </script>
     <script src="{{ "gitbook.js"|resolveAsset }}"></script>
     <script src="{{ "theme.js"|resolveAsset }}"></script>
     <script src="{{ "../_js/highlight/highlight.pack.js"|resolveAsset }}" async></script>
@@ -134,13 +140,6 @@ ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{va
         l(){var
           s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/jhcdgof4';var
             x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()</script>
-
-    <script>
-      var gitbook = gitbook || [];
-      gitbook.push(function() {
-        gitbook.page.hasChanged({{ template.getJSContext()|dump|safe }});
-      });
-    </script>
 {% endblock %}
 
 {% block body %}

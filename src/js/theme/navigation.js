@@ -298,11 +298,13 @@ function handleNavigation(relativeUrl, push) {
                     scrollToHash(hash);
                 }
 
+                console.log("End of Ajax success");
                 deferred.resolve();
             }
         });
     }).promise();
 
+    console.log("End of handleNavigation");
     return loading.show(
         promise
         .fail(function (e) {
@@ -310,7 +312,6 @@ function handleNavigation(relativeUrl, push) {
             // location.href = relativeUrl;
         })
     );
-    console.log("End of handleNavigation");
 }
 
 function updateNavigationPosition() {
