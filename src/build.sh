@@ -26,5 +26,8 @@ ${NPM_DIR}/lessc -clean-css src/less/epub.less _assets/ebook/epub.css
 mkdir -p _assets/website/fonts
 cp -R node_modules/font-awesome/fonts/ _assets/website/fonts/fontawesome/
 
+# Copy vendor javascript
+cp -a src/js/medium-zoom _assets/website/
+
 # Copy icons
 mkdir -p _assets/website/images
