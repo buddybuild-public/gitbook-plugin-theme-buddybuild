@@ -1,8 +1,8 @@
 {% extends "./layout.html" %}
 
-{% block title %}{{ page.titletext | d(page.title, true) | e }} | buddybuild docs{% endblock %}
-{% block description %}{{ page.description | e }}{% endblock %}
-{% block keywords %}{{ page.keywords | e }}{% endblock %}
+{% block title %}{{ page.titletext | d(page.title, true) }} | buddybuild docs{% endblock %}
+{% block description %}{{ page.description.replace(/"/g, '&quote;')}}{% endblock %}
+{% block keywords %}{{ page.keywords.replace(/"/g, '&quote;')}}{% endblock %}
 
 {% block head %}
 {{ super() }}
