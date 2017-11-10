@@ -1,8 +1,9 @@
 {% extends "./layout.html" %}
+{% set dqr = r/"/g %}
 
 {% block title %}{{ page.titletext | d(page.title, true) }} | buddybuild docs{% endblock %}
-{% block description %}{{ page.description.replace(/"/g, '&quote;')}}{% endblock %}
-{% block keywords %}{{ page.keywords.replace(/"/g, '&quote;')}}{% endblock %}
+{% block description %}{{ page.description.replace(dqr, '&quot;')}}{% endblock %}
+{% block keywords %}{{ page.keywords.replace(dqr, '&quot;')}}{% endblock %}
 
 {% block head %}
 {{ super() }}
