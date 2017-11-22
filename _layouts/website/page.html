@@ -13,8 +13,8 @@
     <link rel="prev" href="{{ page.previous.path|resolveFile }}" />
 {% endif %}
 
-    <meta property="og:title" content="buddybuild Documentation">
-    <meta property="og:description" content="Documentation for buddybuild's CI/CD platform.">
+    <meta property="og:title" content="{{ page.titletext | d(page.title, true) | replace("\"", "&amp;quot;") }} | buddybuild docs">
+    <meta property="og:description" content="{{ page.description | replace("\"", "&amp;quot;") }}">
     <meta property="og:site_name" content="buddybuild">
 
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5TSTS6P');</script>
