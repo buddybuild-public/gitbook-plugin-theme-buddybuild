@@ -26,16 +26,4 @@
 {% endfor -%}
 {% endblock %}
 
-{% block preload %}
-  <link rel="preload" as="style" href="{{ "style.css"|resolveAsset }}">
-  <link rel="preload" as="style" href="{{ "../_js/highlight/styles/default.css" |resolveAsset }}">
-  <link rel="preload" as="style" href="{{ "../_js/highlight/styles/github.css" |resolveAsset }}">
-{{ super() }}
-{% for type, style in config.styles -%}
-{% if fileExists(style) and type == "website" %}
-    <link rel="preload" as="style" href="{{ style|resolveFile }}">
-{%- endif %}
-{% endfor -%}
-{% endblock %}
-
 {% block body %}{% endblock %}
